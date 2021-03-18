@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- This demonstrates the button tag. -->
+
+<br>
+    <br>
+    <br>
+    <button onclick="clicked()">Click here for magic.</button>
+    <br>
+    <input id="inp" type="text" placeholder="Value of counter">
+    <br>
+    <button onclick="clicked1()">Click here for less magic.</button>
+
+    <script lang= "javascript">
+        let counter = 0;
+        function clicked(){
+            counter++;
+            display();
+        }
+        function clicked1(){
+            counter--;
+            display();
+        }
+        
+        let ctrl = document.getElementById("inp");
+
+        
+        function display(){
+            console.log(`The value of counter is now ${counter}.`)
+            ctrl.value=counter;
+            inp.style.color = (counter %2 ==0 ) ? "red" : "black";
+            inp.style.fontWeight = (counter %3==0) ? "bold" : "normal";
+            inp.style.fontStyle = (counter %7==0) ? "italic" : "normal";
+            
+            
+        }
+    </script>
+        <br>
+        <br>
+        <br>
+        <br>
+        <ul>
+           <li><a href="index.html">Jump to main practice page.</a></li> 
+            <li><a href="a.html">Jump to anchor example page.</a></li>
+            <li><a href="input.html">Jump to input example page.</a></li>
+            <li><a href="select.html">Jump to select example page</a></li>
+            <li><a href="table.html">Jump to table example page.</a></li>
+            <li><a href="list.html">Jump to list example page.</a></li> 
+            <li><a href="loaded.html">Jump to loaded example page.</a></li> 
+            <li><a href="border.html">Jump to border example page.</a></li>
+            <li><a href="cv.html">Jump to sample resume.</a></li>
+        </ul>
+</body>
+</html>

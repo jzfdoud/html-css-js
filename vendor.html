@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script lang="javascript">
+        const vget = () => {
+            let xhr = new XMLHttpRequest();
+            xhr.responseType = "json";
+            xhr.open("GET","http://localhost:59525/api/vendors", true);
+            xhr.onload = () => {
+                console.log(xhr.response);
+                display(xhr.response);
+            }
+            xhr.send();
+        };
+
+        const display = (vendors) => {
+            let tbody = document.getElementById("tbody");
+            tbody.innerHTML="";
+            for(let vendor of vendors) {
+                let row = "<tr>";
+                    row += `<td>${vendor.id}</td>`;
+                    row += `<td>${vendor.code}</td>`;
+                    row += `<td>${vendor.name}</td>`;
+                    row += `<td>${vendor.address}</td>`;
+                    row += `<td>${vendor.city}</td>`;
+                    row += `<td>${vendor.state}</td>`;
+                    row += `<td>${vendor.zip}</td>`;
+                    row += `<td>${vendor.phone}</td>`;
+                    row += `<td>${vendor.email}</td>`;
+                    row += "</tr>";
+                    tbody.innerHTML += row;
+            }
+        };
+    </script>
+</head>
+<body>
+    <button onclick="vget()">Get Vendors</button>
+    <table>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Code</td>
+                <td>Name</td>
+                <td>Address</td>
+                <td>City</td>
+                <td>State</td>
+                <td>Zip</td>
+                <td>Phone</td>
+                <td>Email</td>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</body>
+</html>

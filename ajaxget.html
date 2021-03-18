@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <script lang="javascript">
+        const ajaxget = () => {
+            let xhr = new XMLHttpRequest();
+            xhr.responseType="json";
+            xhr.open("GET","http://localhost:59525/api/users", true);
+            xhr.onload = () => {
+                console.log(xhr.response);
+                display(xhr.response);
+            }
+            xhr.send();
+        };
+
+        const display = (users) => {
+            let tbody = document.getElementById("tbody");
+            tbody.innerHTML = "";
+            for(let user of users) {
+            let row = "<tr>";
+            row += `<td>${user.id}</td>`;
+            row += `<td>${user.userName}</td>`;
+            row += `<td>${user.firstName} ${user.lastName}</td>`;
+            row += `<td>${user.phone}</td>`;
+            row += `<td>${user.email}</td>`;
+            row += `<td>${user.isReviewer ? "Yes" : "No"}</td>`;
+            row += `<td>${user.isAdmin ? "Yes" : "No"}</td>`;
+            row += "</tr>";
+            tbody.innerHTML +=row;
+        }
+
+        const getId = () => {
+            let getbyid = document.getElementById("getbyid");
+        }
+    };
+    </script>
+</head>
+<input id="getbyid" type="number" aria-labelledby=`${user.id}` placeholder="Enter UserId" >
+<br>
+<br>
+<br>
+<body>
+    <button onclick="ajaxget()">Get Users</button>
+    <table>
+        <thead>
+            <tr>
+                <td>Id</td>
+                <td>Username</td>
+                <td>Name</td>
+                <td>Phone</td>
+                <td>Email</td>
+                <td>Reviewer?</td>
+                <td>Admin?</td>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+
+        </tbody>
+    </table>
+</body>
+</html>

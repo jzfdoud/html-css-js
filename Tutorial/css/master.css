@@ -1,0 +1,29 @@
+body{
+    font : normal normal normal 16pt/17.6pt Arial, sans-serif;
+} 
+div{
+    border: 2px solid #0C223F;
+    padding: 25px;
+}
+#span4 {
+    font-family: 'Times New Roman';
+}
+.blue {
+    color:#0B1D37;
+}
+.bold {
+    font-weight: bold;
+}
+.xu{
+    color : #0C223F;
+}
+.underline{
+    text-decoration: underline;
+}
+.dunderline{
+    text-decoration: double underline;
+    padding: 15px;
+}
+/* h1{
+    padding-bottom: 15px;
+} */
